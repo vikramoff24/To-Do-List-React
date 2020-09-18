@@ -4,16 +4,12 @@ function ToDoItem(props) {
   const [strike, AddStrike] = useState(false);
 
   function handleClick() {
-    strike ? AddStrike(false) : AddStrike(true);
+    AddStrike((prevValue) => !prevValue);
   }
 
   return (
     <li
-      style={
-        strike && {
-          textDecoration: "line-through"
-        }
-      }
+      style={{ textDecoration: strike ? "line-through" : "none" }}
       onClick={handleClick}
     >
       {props.item}
