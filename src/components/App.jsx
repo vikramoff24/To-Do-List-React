@@ -11,6 +11,7 @@ function App() {
   }
   function addValue() {
     addArrWork((prevValue) => [...prevValue, work]);
+    addWork("");
   }
   return (
     <div className="container">
