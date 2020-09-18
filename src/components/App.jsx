@@ -25,7 +25,11 @@ function App() {
       </div>
 
       <div>
-        <ul></ul>
+        <ul>
+          {arrWork.map((work) => (
+            <li>{work}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
