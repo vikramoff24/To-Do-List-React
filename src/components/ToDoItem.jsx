@@ -1,19 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
 function ToDoItem(props) {
-  const [strike, AddStrike] = useState(false);
-
-  function handleClick() {
-    AddStrike((prevValue) => !prevValue);
-  }
-
   return (
-    <li
-      style={{ textDecoration: strike ? "line-through" : "none" }}
-      onClick={handleClick}
+    <div
+      onClick={() => {
+        props.onChecked(props.id);
+      }}
     >
-      {props.item}
-    </li>
+      <li> {props.item}</li>;
+    </div>
   );
 }
 
