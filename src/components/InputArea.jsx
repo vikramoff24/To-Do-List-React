@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 function InputArea(props) {
+  const [inputText, setInputText] = useState("");
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  }
+
   return (
     <div className="form">
-      <input
-        onChange={props.onChanged(props.value)}
-        type="text"
-        value={props.value}
-      />
-      <button onClick={props.onCliked}>
+      <input onChange={handleChange} type="text" value={inputText} />
+
+      {/* for just calling we can have onClick={props.onCLiked} */}
+      {/* to pass value we need to us pass a function which contain that */}
+
+      <button
+        onClick={() => {
+          setInputText("");
+          return props.onClicked(inputText);
+        }}
+      >
         <span>Add</span>
       </button>
     </div>
