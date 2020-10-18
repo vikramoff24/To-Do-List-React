@@ -11,10 +11,8 @@ function InputArea(props) {
   return (
     <div className="form">
       <input onChange={handleChange} type="text" value={inputText} />
-
       {/* for just calling we can have onClick={props.onCLiked} */}
       {/* to pass value we need to us pass a function which contain that */}
-
       <button
         onClick={() => {
           setInputText("");

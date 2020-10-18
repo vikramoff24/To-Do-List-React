@@ -1,5 +1,4 @@
 import React from "react";
-
 function ToDoItem(props) {
   return (
     <div
@@ -11,5 +10,4 @@ function ToDoItem(props) {
     </div>
   );
 }
-
 export default ToDoItem;
